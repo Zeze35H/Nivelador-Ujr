@@ -1,4 +1,3 @@
-
 from sense_hat import SenseHat
 
 sense = SenseHat()
@@ -33,6 +32,17 @@ e,e,e,e,r,e,e,r,
 e,e,e,e,e,r,e,r,
 e,e,e,e,e,e,r,r,
 e,e,e,r,r,r,r,r,
+]
+
+laranja_diagonal = [
+o,e,e,e,e,e,e,e,
+e,o,e,e,e,e,e,e,
+e,e,o,e,e,e,e,e,
+e,e,e,o,e,e,e,o,
+e,e,e,e,o,e,e,o,
+e,e,e,e,e,o,e,o,
+e,e,e,e,e,e,o,o,
+e,e,e,o,o,o,o,o,
 ]
 
 laranja = [
@@ -76,6 +86,7 @@ while True:
         sense.set_pixels(laranja)
         #(seta para baixo)
         
+        
     elif x <= -0.5 and y == 0 and z <= 0.5 :
         sense.set_rotation(90)
         sense.set_pixels(vermelho)
@@ -84,6 +95,7 @@ while True:
         sense.set_pixels(laranja)
         #(seta para direita)
         
+        
     elif x >= 0.5 and y == 0 and z <= 0.5:
         sense.set_rotation(270)
         sense.set_pixels(vermelho)
@@ -91,6 +103,7 @@ while True:
         sense.set_rotation(270)
         sense.set_pixels(laranja)
         #(seta para esquerda)
+
         
     elif x == 0 and y >= 0.5 and z <= 0.5:
         sense.set_rotation(0)
@@ -99,16 +112,70 @@ while True:
         sense.set_rotation(0)
         sense.set_pixels(laranja)
         #(seta para cima)
+
         
+    elif x <= -0.5 and y <= -0.5 and z <= 0.5 and z > 0 and y > -0.8:
+        sense.set_rotation(180)
+        sense.set_pixels(vermelho_diagonal)
+    elif x >= -0.3 and y <= -0.8 and z >= -0.1 and z <= 0.1 and x < 0:
+        sense.set_rotation(180)
+        sense.set_pixels(laranja_diagonal)
+    elif x <= -0.8 and y >= -0.3 and z >= -0.1 and z <= 0.1 and y < 0:
+        sense.set_rotation(180)
+        sense.set_pixels(laranja_diagonal)
+    elif x >= -0.5 and y >= -0.5 and z >= 0.5 and x < 0 and y < 0 and z != 1:
+        sense.set_rotation(180)
+        sense.set_pixels(laranja_diagonal)
+        #(seta canto inferior direito)
+
+
+    elif x <= -0.5 and y >= 0.5 and z <= 0.5:
+        sense.set_rotation(90)
+        sense.set_pixels(vermelho_diagonal)   
+    elif x <= -0.8 and y <= 0.3 and z >= -0.1 and z <= 0.1 and y > 0:
+        sense.set_rotation(90)
+        sense.set_pixels(laranja_diagonal)
+    elif x >= -0.5 and y <= 0.5 and z >= 0.5 and x < 0 and y > 0 and z != 1:
+        sense.set_rotation(90)
+        sense.set_pixels(laranja_diagonal)
+    elif x >= -0.3 and y >= 0.8 and z >= -0.1 and z <= 0.1 and x < 0:
+        sense.set_rotation(90)
+        sense.set_pixels(laranja_diagonal)
+        #(seta canto superior direito)
+
+
+    elif x >= 0.5 and y >= 0.5 and z <= 0.5:
+        sense.set_rotation(0)
+        sense.set_pixels(vermelho_diagonal)
+    elif x <= 0.5 and y <= 0.5 and z >= 0.5 and x > 0 and y > 0 and z != 1:  
+        sense.set_rotation(0)
+        sense.set_pixels(laranja_diagonal)
+    elif x <= 0.3 and y >= 0.8 and z >= -0.1 and z <= 0.1 and x > 0:
+        sense.set_rotation(0)
+        sense.set_pixels(laranja_diagonal)
+    elif x >= 0.8 and y <= 0.3 and z >= -0.1 and z <= 0.1 and y > 0:
+        sense.set_rotation(0)
+        sense.set_pixels(laranja_diagonal)
+        #(seta canto superior esquerdo)
+        
+
+    elif x >= 0.5 and y <= -0.5 and z <= 0.5:
+        sense.set_rotation(270)
+        sense.set_pixels(vermelho_diagonal)
+    elif x <= 0.5 and y >= -0.5 and z >= 0.5 and x > 0 and y < 0 and z != 1:
+        sense.set_rotation(270)
+        sense.set_pixels(laranja_diagonal)
+    elif x >= 0.8 and y >= -0.3 and z >= -0.1 and z <= 0.1 and y < 0:
+        sense.set_rotation(270)
+        sense.set_pixels(laranja_diagonal)
+    elif x <= 0.3 and y <= -0.8 and z >= -0.1 and z <= 0.1 and x > 0:
+        sense.set_rotation(270)
+        sense.set_pixels(laranja_diagonal)
+        #(seta canto inferior esquerdo)
+
+
     elif x == 0 and y == 0 and z == 1:
         sense.set_rotation(0)
-        sense.set_pixels(green)
-
-    elif 
-                    
+        sense.set_pixels(green)              
         #(verde)
-
-   
-    
-
     
