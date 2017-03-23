@@ -1,4 +1,17 @@
 from sense_hat import SenseHat
+from guizero import App
+from guizero import Text
+from guizero import PushButton
+    
+app = App(title="Nivelador")
+
+welcome_message = Text(app, text="Bem-vindo ao Nivelador", size=100, font="Times New Roman", color="black")
+
+def start():
+    update_text = PushButton(app, start, text="START")
+    update_text.config(height=2, width=30)
+    
+app.display()
 
 sense = SenseHat()
 
@@ -6,7 +19,7 @@ import pygame
 
 pygame.init()
 
-s = (pygame.mixer.music.load ("/home/pi/Downloads/you-know.wav"))
+s = (pygame.mixer.music.load ("/home/pi/Downloads/Alien_AlarmDrum.wav"))
 print(s)
 
 r = [255, 0, 0]
@@ -16,6 +29,7 @@ g = [0, 255, 0]
 b = [0, 0, 255]
 i = [75, 0, 130]
 v = [159, 0, 255]
+
 e = [0, 0, 0]
 
 
@@ -74,13 +88,11 @@ g,g,g,g,g,g,g,g,
 g,g,g,g,g,g,g,g,
 ]
 
-need_music = True
+
 def musica():
-  if need_music:
-    pygame.mixer.music.load("/home/pi/Downloads/you-know.wav")
+    pygame.mixer.music.load("/home/pi/Downloads/Alien_AlarmDrum.wav")
     pygame.mixer.music.play(0)
-    global need_music
-    need_music = False
+ 
 
 while True:
     x = sense.get_accelerometer_raw()['x']
@@ -90,11 +102,11 @@ while True:
     x = round(x, 1)
     y = round(y, 1)
     z = round(z, 1)
-    
+
     print("pitch={0}, roll={1}, yaw={2}".format(x,y,z))
     
+    
     if  x == 0 and y <= -0.5 and z <= 0.5 and z != 1:
-        
         sense.set_rotation(180)
         sense.set_pixels(vermelho)
         musica()
@@ -127,7 +139,6 @@ while True:
     elif x == 0 and y >= 0.5 and z <= 0.5:
         sense.set_rotation(0)
         sense.set_pixels(vermelho)
-        s.play("/home/pi/Downloads/you-know.wav")
         musica()
     elif x == 0 and y <= 0.5 and z >= 0.5 and y > 0 and z != 1:
         sense.set_rotation(0)
@@ -135,10 +146,9 @@ while True:
         #(seta para cima)
 
         
-    elif x <= -0.5 and y <= -0.5 and z <= 0.5 and z > 0 and y > -0.8:
+    elif x <= -0.5 and y <= -0.5 and z <= 0.5:
         sense.set_rotation(180)
         sense.set_pixels(vermelho_diagonal)
-        s.play("/home/pi/Downloads/you-know.wav")
         musica()
     elif x >= -0.3 and y <= -0.8 and z >= -0.1 and z <= 0.1 and x < 0:
         sense.set_rotation(180)
@@ -155,7 +165,6 @@ while True:
     elif x <= -0.5 and y >= 0.5 and z <= 0.5:
         sense.set_rotation(90)
         sense.set_pixels(vermelho_diagonal)
-        s.play("/home/pi/Downloads/you-know.wav")
         musica()
     elif x <= -0.8 and y <= 0.3 and z >= -0.1 and z <= 0.1 and y > 0:
         sense.set_rotation(90)
@@ -172,7 +181,6 @@ while True:
     elif x >= 0.5 and y >= 0.5 and z <= 0.5:
         sense.set_rotation(0)
         sense.set_pixels(vermelho_diagonal)
-        s.play("/home/pi/Downloads/you-know.wav")
         musica()
     elif x <= 0.5 and y <= 0.5 and z >= 0.5 and x > 0 and y > 0 and z != 1:  
         sense.set_rotation(0)
@@ -189,7 +197,6 @@ while True:
     elif x >= 0.5 and y <= -0.5 and z <= 0.5:
         sense.set_rotation(270)
         sense.set_pixels(vermelho_diagonal)
-        s.play("/home/pi/Downloads/you-know.wav")
         musica()
     elif x <= 0.5 and y >= -0.5 and z >= 0.5 and x > 0 and y < 0 and z != 1:
         sense.set_rotation(270)
