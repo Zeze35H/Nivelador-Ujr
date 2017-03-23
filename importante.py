@@ -2,6 +2,12 @@ from sense_hat import SenseHat
 
 sense = SenseHat()
 
+import pygame
+
+pygame.init()
+
+s = (pygame.mixer.music.load ("/home/pi/Downloads/you-know.wav"))
+print(s)
 
 r = [255, 0, 0]
 o = [255, 127, 0]
@@ -11,6 +17,7 @@ b = [0, 0, 255]
 i = [75, 0, 130]
 v = [159, 0, 255]
 e = [0, 0, 0]
+
 
 vermelho = [
 e,e,e,r,r,e,e,e,
@@ -67,6 +74,14 @@ g,g,g,g,g,g,g,g,
 g,g,g,g,g,g,g,g,
 ]
 
+need_music = True
+def musica():
+  if need_music:
+    pygame.mixer.music.load("/home/pi/Downloads/you-know.wav")
+    pygame.mixer.music.play(0)
+    global need_music
+    need_music = False
+
 while True:
     x = sense.get_accelerometer_raw()['x']
     y = sense.get_accelerometer_raw()['y']
@@ -79,8 +94,10 @@ while True:
     print("pitch={0}, roll={1}, yaw={2}".format(x,y,z))
     
     if  x == 0 and y <= -0.5 and z <= 0.5 and z != 1:
+        
         sense.set_rotation(180)
         sense.set_pixels(vermelho)
+        musica()
     elif x == 0 and y >= -0.5 and  z >= 0.5 and z != 1 and y < 0:
         sense.set_rotation(180)
         sense.set_pixels(laranja)
@@ -90,6 +107,7 @@ while True:
     elif x <= -0.5 and y == 0 and z <= 0.5 :
         sense.set_rotation(90)
         sense.set_pixels(vermelho)
+        musica()
     elif x >= -0.5 and y == 0 and z >=0.5 and x < 0 and z != 1:
         sense.set_rotation(90)
         sense.set_pixels(laranja)
@@ -99,6 +117,7 @@ while True:
     elif x >= 0.5 and y == 0 and z <= 0.5:
         sense.set_rotation(270)
         sense.set_pixels(vermelho)
+        musica()
     elif x <= 0.5 and y == 0 and z >= 0.5 and x > 0 and z != 1: 
         sense.set_rotation(270)
         sense.set_pixels(laranja)
@@ -108,6 +127,8 @@ while True:
     elif x == 0 and y >= 0.5 and z <= 0.5:
         sense.set_rotation(0)
         sense.set_pixels(vermelho)
+        s.play("/home/pi/Downloads/you-know.wav")
+        musica()
     elif x == 0 and y <= 0.5 and z >= 0.5 and y > 0 and z != 1:
         sense.set_rotation(0)
         sense.set_pixels(laranja)
@@ -117,6 +138,8 @@ while True:
     elif x <= -0.5 and y <= -0.5 and z <= 0.5 and z > 0 and y > -0.8:
         sense.set_rotation(180)
         sense.set_pixels(vermelho_diagonal)
+        s.play("/home/pi/Downloads/you-know.wav")
+        musica()
     elif x >= -0.3 and y <= -0.8 and z >= -0.1 and z <= 0.1 and x < 0:
         sense.set_rotation(180)
         sense.set_pixels(laranja_diagonal)
@@ -131,7 +154,9 @@ while True:
 
     elif x <= -0.5 and y >= 0.5 and z <= 0.5:
         sense.set_rotation(90)
-        sense.set_pixels(vermelho_diagonal)   
+        sense.set_pixels(vermelho_diagonal)
+        s.play("/home/pi/Downloads/you-know.wav")
+        musica()
     elif x <= -0.8 and y <= 0.3 and z >= -0.1 and z <= 0.1 and y > 0:
         sense.set_rotation(90)
         sense.set_pixels(laranja_diagonal)
@@ -147,6 +172,8 @@ while True:
     elif x >= 0.5 and y >= 0.5 and z <= 0.5:
         sense.set_rotation(0)
         sense.set_pixels(vermelho_diagonal)
+        s.play("/home/pi/Downloads/you-know.wav")
+        musica()
     elif x <= 0.5 and y <= 0.5 and z >= 0.5 and x > 0 and y > 0 and z != 1:  
         sense.set_rotation(0)
         sense.set_pixels(laranja_diagonal)
@@ -162,6 +189,8 @@ while True:
     elif x >= 0.5 and y <= -0.5 and z <= 0.5:
         sense.set_rotation(270)
         sense.set_pixels(vermelho_diagonal)
+        s.play("/home/pi/Downloads/you-know.wav")
+        musica()
     elif x <= 0.5 and y >= -0.5 and z >= 0.5 and x > 0 and y < 0 and z != 1:
         sense.set_rotation(270)
         sense.set_pixels(laranja_diagonal)
@@ -175,7 +204,7 @@ while True:
 
 
     elif x == 0 and y == 0 and z == 1:
-        sense.set_rotation(0)
+        sense.set_rotation(180)
         sense.set_pixels(green)              
         #(verde)
-    
+   
