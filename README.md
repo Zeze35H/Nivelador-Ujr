@@ -25,7 +25,7 @@ Sistema que indica a inclinação de uma superfície através de um sistema de s
 #### Vídeo
 |Nome |Link |
 |---    |---    |
-|NIVELADOR2.0  |[Ver aqui](http://mega.nz/#!435WxAzC!B1SCSh4ljYbA9e9-wOk6mOHzwEtfVelTMX_HOBvtdj0)
+|NIVELADOR2.0  |[Ver aqui](http://youtu.be/Kym92POFxzE)
 
 #### Ficheiro de som
 
