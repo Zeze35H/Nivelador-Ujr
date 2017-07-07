@@ -38,7 +38,7 @@ Sistema que indica a inclinação de uma superfície através de um sistema de s
 
 |Nome |Link  |  
 |---  |---  |    
-|Raspberry Pi 3  |[Ver aqui](http://www.raspberry pi.org)  |  
+|Raspberry Pi 3  |[Ver aqui](http://www.raspberrypi.org)  |  
 |SenseHat  |[Ver aqui](https://www.raspberrypi.org/?s=sense+hat)  |
 
 #### Software  
