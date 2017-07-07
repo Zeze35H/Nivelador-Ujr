@@ -16,9 +16,9 @@ Sistema que indica a inclinação de uma superfície através de um sistema de s
 #### Instruções
 
 1. Descarregar o ficheiro importante.py
-2. Descarregar o ficheiro de som disponivel abaixo
+2. Descarregar o ficheiro de som disponivel abaixo (CHAVE : !qfTekvF-rf7viVy7LFkdcuFqLuUHv3B8NiBFQSF-E6E)
 3. Abrir o ficheiro importante.py
-4. Alterar a localização do ficheiro de som no importante.py de modo a que coincida com a localização do primeiro depois de descarregado
+4. Alterar a localização do ficheiro de som no importante.py de modo a que coincida com a localização do primeiro depois de descarregado 
 5. F5
 6. Clicar em start
 
@@ -31,7 +31,7 @@ Sistema que indica a inclinação de uma superfície através de um sistema de s
 
 |Nome   |Link   |
 |---  |---  |
-|Alien_Alarm_Drum |[Ver aqui](http://mega.nz/#!l3g3WLrZ!qfTekvF-rf7viVy7LFkdcuFqLuUHv3B8NiBFQSF-E6E)
+|Alien_Alarm_Drum |[Ver aqui](https://mega.nz/#!Y7pmwJ7D)
 
 
 #### Hardware  
